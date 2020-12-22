@@ -63,7 +63,6 @@ $(GOLANGCI_LINT): $(mkfile_dir)/install-golangci-lint.sh
 # ref: https://github.com/golang/go/issues/30515
 $(RUNSIM):
 	@echo "Installing runsim..."
-	@(cd /tmp && go get github.com/evdatsion/tools/cmd/runsim@v1.0.0)
 
 golangci-lint: $(GOLANGCI_LINT)
 
