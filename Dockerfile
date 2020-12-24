@@ -28,6 +28,9 @@ WORKDIR /root
 # Copy over binaries from the build-env
 COPY --from=build-env /go/bin/cuspd /usr/bin/cuspd
 COPY --from=build-env /go/bin/cuspcli /usr/bin/cuspcli
+COPY start.sh start.sh
+COPY .cuspcli .cuspcli
 
+EXPOSE 1317
 # Run cuspd by default, omit entrypoint to ease using container with cuspcli
-CMD ["cuspd"]
+ENTRYPOINT ["/bin/sh", "/root/start.sh"]
