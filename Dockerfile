@@ -33,4 +33,4 @@ COPY .cuspcli .cuspcli
 
 EXPOSE 1317
 # Run cuspd by default, omit entrypoint to ease using container with cuspcli
-ENTRYPOINT ["/bin/sh", "/root/start.sh"]
+CMD ["/bin/sh", "/root/start.sh"]
